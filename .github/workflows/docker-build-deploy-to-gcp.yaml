@@ -25,5 +25,5 @@ jobs:
                     GOOGLE_PROJECT: ${{secrets.GOOGLE_PROJECT }}
             run: |
                     gcloud auth configure-docker us-west2-docker.pkg.dev
-                    docker build -t us-west2-docker.pkg.dev/regal-throne-379616/quickstart-docker-repo/docker-test:latest .
-                    docker push us-west2-docker.pkg.dev/regal-throne-379616/quickstart-docker-repo/docker-test:latest
+                    docker build -t us-west2-docker.pkg.dev/${{secrets.GOOGLE_PROJECT }}/quickstart-docker-repo/docker-test:latest .
+                    docker push us-west2-docker.pkg.dev/${{secrets.GOOGLE_PROJECT }}/quickstart-docker-repo/docker-test:latest
