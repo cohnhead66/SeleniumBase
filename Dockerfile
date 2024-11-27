@@ -134,5 +134,5 @@ RUN seleniumbase get chromedriver --path
 COPY integrations/docker/docker-entrypoint.sh /
 COPY integrations/docker/run_docker_test_in_chrome.sh /
 RUN chmod +x *.sh
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/run_docker_test_in_chrome.sh"]
 CMD ["/bin/bash"]
