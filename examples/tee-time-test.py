@@ -171,7 +171,7 @@ def main():
       sb.cdp.click(memberName)
       sb.sleep(2)
       sb.cdp.save_screenshot(ssName+"_ss2.png")
-      #print(sb.get_text("#tt1_left > p > span.serverClock > span > b"))
+      print(sb.get_text("#tt1_left > p > span.serverClock > span > b"))
       serverClock=sb.cdp.get_text("#tt1_left > p > span.serverClock > span > b")
       print(serverClock+" vs "+triggerTimeStr)
       while serverClock != triggerTimeStr:
@@ -183,7 +183,7 @@ def main():
       date_url ="https://www1.foretees.com/v5/elcaminocc_golf_m56/Member_sheet?calDate="+requestDateStr+"&course=&displayOpt=0"
       sb.cdp.open(date_url)
       
-      
+      print("current page title "+sb.get_title())
       ###TODO make sure we got to the teesheet page for the requested date
       
       ### find the first open tee time after first time parameter
@@ -206,6 +206,7 @@ def main():
   
       sb.sleep(1)
       sb.cdp.save_screenshot(ssName+"_ss3.png")
+      print("current page title "+sb.get_title())
       
       if sb.cdp.is_element_visible('body > div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.newpropushbelowmenu.ui-dialog-buttons > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span'):
           #Click continue if alternate tee time dialog box is presented
@@ -283,6 +284,7 @@ def main():
           sb.cdp.click('/html/body/div[5]')
           sb.cdp.click('/html/body/div[5]/div[4]/div/button')
       sb.sleep(5) 
+      print("current page title "+sb.get_title())
       sb.cdp.save_screenshot(ssName+"_ss5.png")
       print("tee time script completed")
 

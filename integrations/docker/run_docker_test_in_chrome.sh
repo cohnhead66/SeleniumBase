@@ -2,7 +2,7 @@
 set -e
 # Run example test from inside Docker image
 echo "Running example SeleniumBase test from Docker with headless Chrome..."
-cd /SeleniumBase/examples/cdp_mode/
-/usr/bin/python3 raw_albertsons.py
+cd /SeleniumBase/examples/
+/usr/bin/python3 tee-time-test.py
 which python3
 exec "$@"
